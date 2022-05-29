@@ -21,34 +21,67 @@ var fifteenEl = $('.fifteen');
 var sixteenEl = $('.sixteen');
 var seventeenEl = $('.seventeen');
 
+schedIndex = 0;
+
 function saveWork() {
     // TODO: Update time key with proper time input
-    var sched = {
-        hour9 : nineEl.val(),
-        hour10: tenEl.val(),
-        hour11: elevenEl.val(),
-        hour12: twelveEl.val(),
-        hour13: thirteenEl.val(),
-        hour14: fourteenEl.val(),
-        hour15: fifteenEl.val(),
-        hour16: sixteenEl.val(),
-        hour17: seventeenEl.val()
-    }
+    var schedNine = nineEl.val();
+    var schedTen = tenEl.val();
+    var schedEleven = elevenEl.val();
+    var schedTwelve = twelveEl.val();
+    var schedThirteen = thirteenEl.val();
+    var schedFourteen = fourteenEl.val();
+    var schedFifteen = fifteenEl.val();
+    var schedSixteen = sixteenEl.val();
+    var schedSeventeen = seventeenEl.val();
 
-    var work = JSON.parse(localStorage.getItem('schedule')) || [];
+    var nine = JSON.parse(localStorage.getItem('hour-9')) || [];
+    var ten = JSON.parse(localStorage.getItem('hour-10')) || [];
+    var eleven = JSON.parse(localStorage.getItem('hour-11')) || [];
+    var twelve = JSON.parse(localStorage.getItem('hour-12')) || [];
+    var thirteen = JSON.parse(localStorage.getItem('hour-13')) || [];
+    var fourteen = JSON.parse(localStorage.getItem('hour-14')) || [];
+    var fifteen = JSON.parse(localStorage.getItem('hour-15')) || [];
+    var sixteen = JSON.parse(localStorage.getItem('hour-16')) || [];
+    var seventeen = JSON.parse(localStorage.getItem('hour-17')) || [];
     
     // TODO: Overwrite existing storage with matching time
-    work.pop();
-    work.push(sched);
+
+    nine.pop();
+    nine.push(schedNine);
+    ten.pop();
+    ten.push(schedTen);
+    eleven.pop();
+    eleven.push(schedEleven);
+    twelve.pop();
+    twelve.push(schedTwelve);
+    thirteen.pop();
+    thirteen.push(schedThirteen);
+    fourteen.pop();
+    fourteen.push(schedFourteen);
+    fifteen.pop();
+    fifteen.push(schedFifteen);
+    sixteen.pop();
+    sixteen.push(schedSixteen);
+    seventeen.pop();
+    seventeen.push(schedSeventeen);
     
-    localStorage.setItem('schedule', JSON.stringify(work));
+    localStorage.setItem('hour-9', JSON.stringify(nine));
+    localStorage.setItem('hour-10', JSON.stringify(ten));
+    localStorage.setItem('hour-11', JSON.stringify(eleven));
+    localStorage.setItem('hour-12', JSON.stringify(twelve));
+    localStorage.setItem('hour-13', JSON.stringify(thirteen));
+    localStorage.setItem('hour-14', JSON.stringify(fourteen));
+    localStorage.setItem('hour-15', JSON.stringify(fifteen));
+    localStorage.setItem('hour-16', JSON.stringify(sixteen));
+    localStorage.setItem('hour-17', JSON.stringify(seventeen));
+
     displayWork();
 }
 
 function displayWork() {
     var work = JSON.parse(localStorage.getItem('schedule')) || [];
-    console.log(work[0].time);
-    textEl.text('just checking');
+    
 }
 
 function init() {
