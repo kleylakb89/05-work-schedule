@@ -80,7 +80,25 @@ function saveWork() {
 }
 
 function displayWork() {
-    var work = JSON.parse(localStorage.getItem('schedule')) || [];
+    var nine = JSON.parse(localStorage.getItem('hour-9')) || [];
+    var ten = JSON.parse(localStorage.getItem('hour-10')) || [];
+    var eleven = JSON.parse(localStorage.getItem('hour-11')) || [];
+    var twelve = JSON.parse(localStorage.getItem('hour-12')) || [];
+    var thirteen = JSON.parse(localStorage.getItem('hour-13')) || [];
+    var fourteen = JSON.parse(localStorage.getItem('hour-14')) || [];
+    var fifteen = JSON.parse(localStorage.getItem('hour-15')) || [];
+    var sixteen = JSON.parse(localStorage.getItem('hour-16')) || [];
+    var seventeen = JSON.parse(localStorage.getItem('hour-17')) || [];
+
+    nineEl.text(nine);
+    tenEl.text(ten);
+    elevenEl.text(eleven);
+    twelveEl.text(twelve);
+    thirteenEl.text(thirteen);
+    fourteenEl.text(fourteen);
+    fifteenEl.text(fifteen);
+    sixteenEl.text(sixteen);
+    seventeenEl.text(seventeen);
     
 }
 
