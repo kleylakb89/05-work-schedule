@@ -11,17 +11,34 @@
 
 var saveBtnEl = $('.saveBtn');
 var textEl = $('.description');
+var nineEl = $('.nine');
+var tenEl = $('.ten');
+var elevenEl = $('.eleven');
+var twelveEl = $('.twelve');
+var thirteenEl = $('.thirteen');
+var fourteenEl = $('.fourteen');
+var fifteenEl = $('.fifteen');
+var sixteenEl = $('.sixteen');
+var seventeenEl = $('.seventeen');
 
 function saveWork() {
     // TODO: Update time key with proper time input
     var sched = {
-        time: 9,
-        work: textEl.val()
+        hour9 : nineEl.val(),
+        hour10: tenEl.val(),
+        hour11: elevenEl.val(),
+        hour12: twelveEl.val(),
+        hour13: thirteenEl.val(),
+        hour14: fourteenEl.val(),
+        hour15: fifteenEl.val(),
+        hour16: sixteenEl.val(),
+        hour17: seventeenEl.val()
     }
 
     var work = JSON.parse(localStorage.getItem('schedule')) || [];
     
     // TODO: Overwrite existing storage with matching time
+    work.pop();
     work.push(sched);
     
     localStorage.setItem('schedule', JSON.stringify(work));
