@@ -11,7 +11,6 @@
 
 var saveBtnEl = $('.saveBtn');
 var textEl = $('.description');
-var tableEl = $('.table');
 
 function saveWork() {
     // TODO: Update time key with proper time input
@@ -32,7 +31,7 @@ function saveWork() {
 function displayWork() {
     var work = JSON.parse(localStorage.getItem('schedule')) || [];
     console.log(work[0].time);
-    tableEl.find('.description').text('just checking');
+    textEl.text('just checking');
 }
 
 function init() {
