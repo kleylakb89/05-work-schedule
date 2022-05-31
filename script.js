@@ -101,7 +101,7 @@ function displayWork() {
 
 // Function to display the current date from moment.js
 function displayDate() {
-    dayEl.text(moment().format('dddd, MMMM Do, h:mm'));
+    dayEl.text(moment().format('dddd, MMMM Do, h:mm a'));
 }
 
 // Function to determine the current time and adjust the classes of those time slots so they are color coded correctly
