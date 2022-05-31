@@ -112,8 +112,14 @@ function currentTime() {
     var now = moment();
     var nineAm = moment('09:00:00', 'hh:mm:ss');
     var tenAm = moment('10:00:00', 'hh:mm:ss');
-    console.log(now);
-    console.log(nineAm);
+    var elevenAm = moment('11:00:00', 'hh:mm:ss');
+    var twelvePm = moment('12:00:00', 'hh:mm:ss');
+    var onePm = moment('13:00:00', 'hh:mm:ss');
+    var twoPm = moment('14:00:00', 'hh:mm:ss');
+    var threePm = moment('15:00:00', 'hh:mm:ss');
+    var fourPm = moment('16:00:00', 'hh:mm:ss');
+    var fivePm = moment('17:00:00', 'hh:mm:ss');
+    var sixPm = moment('18:00:00', 'hh:mm:ss');
     if (moment(now).isBefore(nineAm)) {
         textEl.addClass('future');
     } else if (moment(now).isBetween(nineAm, tenAm)) {
@@ -126,6 +132,88 @@ function currentTime() {
         fifteenEl.addClass('future');
         sixteenEl.addClass('future');
         seventeenEl.addClass('future');
+    } else if (moment(now).isBetween(tenAm, elevenAm)) {
+        nineEl.addClass('past');
+        tenEl.addClass('present');
+        elevenEl.addClass('future');
+        twelveEl.addClass('future');
+        thirteenEl.addClass('future');
+        fourteenEl.addClass('future');
+        fifteenEl.addClass('future');
+        sixteenEl.addClass('future');
+        seventeenEl.addClass('future');
+    } else if (moment(now).isBetween(elevenAm, twelvePm)) {
+        nineEl.addClass('past');
+        tenEl.addClass('past');
+        elevenEl.addClass('present');
+        twelveEl.addClass('future');
+        thirteenEl.addClass('future');
+        fourteenEl.addClass('future');
+        fifteenEl.addClass('future');
+        sixteenEl.addClass('future');
+        seventeenEl.addClass('future');
+    } else if (moment(now).isBetween(twelvePm, onePm)) {
+        nineEl.addClass('past');
+        tenEl.addClass('past');
+        elevenEl.addClass('past');
+        twelveEl.addClass('present');
+        thirteenEl.addClass('future');
+        fourteenEl.addClass('future');
+        fifteenEl.addClass('future');
+        sixteenEl.addClass('future');
+        seventeenEl.addClass('future');
+    } else if (moment(now).isBetween(onePm, twoPm)) {
+        nineEl.addClass('past');
+        tenEl.addClass('past');
+        elevenEl.addClass('past');
+        twelveEl.addClass('past');
+        thirteenEl.addClass('present');
+        fourteenEl.addClass('future');
+        fifteenEl.addClass('future');
+        sixteenEl.addClass('future');
+        seventeenEl.addClass('future');
+    } else if (moment(now).isBetween(twoPm, threePm)) {
+        nineEl.addClass('past');
+        tenEl.addClass('past');
+        elevenEl.addClass('past');
+        twelveEl.addClass('past');
+        thirteenEl.addClass('past');
+        fourteenEl.addClass('present');
+        fifteenEl.addClass('future');
+        sixteenEl.addClass('future');
+        seventeenEl.addClass('future');
+    } else if (moment(now).isBetween(threePm, fourPm)) {
+        nineEl.addClass('past');
+        tenEl.addClass('past');
+        elevenEl.addClass('past');
+        twelveEl.addClass('past');
+        thirteenEl.addClass('past');
+        fourteenEl.addClass('past');
+        fifteenEl.addClass('present');
+        sixteenEl.addClass('future');
+        seventeenEl.addClass('future');
+    } else if (moment(now).isBetween(fourPm, fivePm)) {
+        nineEl.addClass('past');
+        tenEl.addClass('past');
+        elevenEl.addClass('past');
+        twelveEl.addClass('past');
+        thirteenEl.addClass('past');
+        fourteenEl.addClass('past');
+        fifteenEl.addClass('past');
+        sixteenEl.addClass('present');
+        seventeenEl.addClass('future');
+    }  else if (moment(now).isBetween(fivePm, sixPm)) {
+        nineEl.addClass('past');
+        tenEl.addClass('past');
+        elevenEl.addClass('past');
+        twelveEl.addClass('past');
+        thirteenEl.addClass('past');
+        fourteenEl.addClass('past');
+        fifteenEl.addClass('past');
+        sixteenEl.addClass('past');
+        seventeenEl.addClass('present');
+    } else if (moment(now).isAfter(sixPM)) {
+        textEl.addClass('past');
     }
 }
 
