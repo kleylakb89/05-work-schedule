@@ -11,6 +11,8 @@
 
 var saveBtnEl = $('.saveBtn');
 var textEl = $('.description');
+var dayEl = $('#currentDay');
+
 var nineEl = $('.nine');
 var tenEl = $('.ten');
 var elevenEl = $('.eleven');
@@ -102,9 +104,15 @@ function displayWork() {
     
 }
 
+function displayDate() {
+    dayEl.text(moment().format('dddd, MMMM Do'));
+}
+
 function init() {
     displayWork();
+    displayDate();
 }
+
 
 saveBtnEl.on('click', saveWork);
 
