@@ -101,7 +101,7 @@ function displayWork() {
 
 // Function to display the current date from moment.js
 function displayDate() {
-    dayEl.text(moment().format('dddd, MMMM Do'));
+    dayEl.text(moment().format('dddd, MMMM Do, h:mm'));
 }
 
 // Function to determine the current time and adjust the classes of those time slots so they are color coded correctly
@@ -229,3 +229,8 @@ saveBtnEl.on('click', saveWork);
 
 // starts the page with the init function
 init();
+
+// refreshes init function every one minute
+setInterval(function(){
+    init();
+}, 60000);
