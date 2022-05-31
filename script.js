@@ -108,9 +108,20 @@ function displayDate() {
     dayEl.text(moment().format('dddd, MMMM Do'));
 }
 
+function currentTime() {
+    var now = moment().hour();
+    var nineAm = moment('9:00:00', 'hh:mm:ss');
+    console.log(now);
+    if (moment(now).isBefore(nineAm)) {
+        console.log('yes');
+        textEl.addClass('future');
+    } 
+}
+
 function init() {
     displayWork();
     displayDate();
+    currentTime();
 }
 
 
