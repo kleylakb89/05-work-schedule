@@ -109,13 +109,24 @@ function displayDate() {
 }
 
 function currentTime() {
-    var now = moment().hour();
-    var nineAm = moment('9:00:00', 'hh:mm:ss');
+    var now = moment();
+    var nineAm = moment('09:00:00', 'hh:mm:ss');
+    var tenAm = moment('10:00:00', 'hh:mm:ss');
     console.log(now);
+    console.log(nineAm);
     if (moment(now).isBefore(nineAm)) {
-        console.log('yes');
         textEl.addClass('future');
-    } 
+    } else if (moment(now).isBetween(nineAm, tenAm)) {
+        nineEl.addClass('present');
+        tenEl.addClass('future');
+        elevenEl.addClass('future');
+        twelveEl.addClass('future');
+        thirteenEl.addClass('future');
+        fourteenEl.addClass('future');
+        fifteenEl.addClass('future');
+        sixteenEl.addClass('future');
+        seventeenEl.addClass('future');
+    }
 }
 
 function init() {
