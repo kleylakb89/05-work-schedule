@@ -212,7 +212,7 @@ function currentTime() {
         fifteenEl.addClass('past');
         sixteenEl.addClass('past');
         seventeenEl.addClass('present');
-    } else if (moment(now).isAfter(sixPM)) {
+    } else if (moment(now).isAfter(sixPm)) {
         textEl.addClass('past');
     }
 }
